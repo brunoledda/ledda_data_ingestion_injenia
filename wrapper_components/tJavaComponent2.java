@@ -1,0 +1,10 @@
+String my_path = row3.path;
+String my_section = row3.section;
+String QUERY_GRAPHQL = "my_query";
+JsonObject VAR_GRAPHQL = new JsonObject();
+VAR_GRAPHQL.addProperty("path", my_path);
+VAR_GRAPHQL.addProperty("siteId", my_section); 
+JsonObject jsonBody = new JsonObject();
+jsonBody.addProperty("query", QUERY_GRAPHQL);
+jsonBody.add("variables", VAR_GRAPHQL);
+context.body = jsonBody.toString();
